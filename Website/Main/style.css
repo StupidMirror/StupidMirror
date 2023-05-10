@@ -1,0 +1,42 @@
+:root {
+    --background: black;
+    --text-color: #F8F9FA;
+    --accent-color: #495057;
+    
+    --font: sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    color: var(--text-color);
+    font-family: var(--font);
+}
+body {
+    background-color: var(--background);
+}
+
+#date-text {
+    position: absolute;
+    padding: 20px;
+    right: 10px;
+    bottom: 420px;
+    font-size: 50px;
+}
+#time-text {
+    position: absolute;
+    padding: 20px;
+    right: 100px;
+    bottom: 250px;
+    font-size: 160px;
+}
+#sec-text {
+    position: absolute;
+    padding: 20px;
+    right: 10px;
+    bottom: 330px;
+    font-size: 80px;
+    color: var(--accent-color);
+}
