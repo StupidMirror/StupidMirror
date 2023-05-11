@@ -35,7 +35,16 @@ onSnapshot(documentLanguage, (doc) => {
   }
   updateLanguage()
 });
-
+let name;
+onSnapshot(documentUser, (doc) => {
+  if (doc.exists()) {
+    name = doc.data().name;
+    console.log(name)
+  } else {
+    name = "[NAME]"
+  }
+  updateLanguage()
+});
 
 function setLanguage(lang) {
   language = lang;

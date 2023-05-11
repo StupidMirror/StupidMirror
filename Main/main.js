@@ -15,8 +15,9 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 
 const collectionSettings = collection(db, 'settings');
-const documentLanguage = doc(collectionSettings, 'language');
 
+// Sprache
+const documentLanguage = doc(collectionSettings, 'language');
 let language;
 onSnapshot(documentLanguage, (doc) => {
   if (doc.exists()) {
@@ -25,6 +26,18 @@ onSnapshot(documentLanguage, (doc) => {
     mottoUpdate(language)
   } else {
     language = defaultLanguage;
+  }
+});
+
+// Motto Module
+const documentMotto = doc(collectionSettings, 'mottos');
+let mottoActiv;
+onSnapshot(documentMotto, (doc) => {
+  if (doc.exists()) {
+    mottoActiv = doc.data().boolean;
+    mottoUpdate(language)
+  } else {
+    mottoActiv = false;
   }
 });
 
@@ -68,16 +81,21 @@ setInterval(() => {
 // Mottotexte
 
 const mottoText = document.querySelector("#motto-text"); 
-const mottoList = {
+const listMotto = {
   'en': ['Carpe diem', 'Stay hungry, stay foolish', 'Think different'],
   'de': ['Lebe jeden Tag als wäre es dein letzter', 'Wer wagt, gewinnt', 'Träume nicht dein Leben, lebe deinen Traum'],
   'fr': ['La vie est belle', 'Tout est possible', 'Rien n\'est impossible']
 }
 
 function mottoUpdate(language) {
-  const mottos = mottoList[language];
-  const randomIndex = Math.floor(Math.random() * mottos.length);
-  mottoText.textContent = `${mottos[randomIndex]}`
+  if (mottoActiv === true) {
+    mottoText.style.visibility = "visible";
+    const motto = listMotto[language];
+    const randomIndex = Math.floor(Math.random() * motto.length);
+    mottoText.textContent = `${motto[randomIndex]}`
+  } else {
+    mottoText.style.visibility = "hidden";
+  }
 }
 
 setInterval(() => {
@@ -89,9 +107,13 @@ setInterval(() => {
 // News
 
 const apiKey = '5c38cd27597c4b0db417109814070b7c';
-const apiUrl = `https://newsapi.org/v2/top-headlines?country=ch&apiKey=${apiKey}`;
+const apiUrl = `https://newsapi.org/v2/top-headlines?language=de&apiKey=${apiKey}`;
 
 fetch(apiUrl)
   .then(response => response.json())
-  .then(data => console.log(data))
+  .then(data => {
+    data.articles.forEach(articles => {
+      
+    });
+  })
   .catch(error => console.error(error));
