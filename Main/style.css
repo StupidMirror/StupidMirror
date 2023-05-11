@@ -40,3 +40,12 @@ body {
     font-size: 80px;
     color: var(--accent-color);
 }
+
+
+#motto-text {
+    position: absolute;
+    padding: 20px;
+    left: 20px;
+    top: 20px;
+    font-size: 70px;
+}
