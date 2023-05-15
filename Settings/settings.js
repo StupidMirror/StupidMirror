@@ -17,12 +17,13 @@ const db = getFirestore(firebaseApp);
 const collectionSettings = collection(db, 'settings');
 const documentLanguage = doc(collectionSettings, 'language');
 const documentUser = doc(collectionSettings, 'user');
+const documentAlignment = doc(collectionSettings, "alignment");
 
 
 const languageButtons = document.querySelectorAll(".language-button");
 const title = document.getElementById("title");
 const welcome = document.querySelectorAll(".welcome-text");
-const finalProject = document.getElementById("final-project");
+const finalProject = document.querySelectorAll("final-project");
 const defaultLanguage = "en";
 
 
@@ -39,11 +40,22 @@ let name;
 onSnapshot(documentUser, (doc) => {
   if (doc.exists()) {
     name = doc.data().name;
-    console.log(name)
   } else {
     name = "[NAME]"
   }
   updateLanguage()
+});
+onSnapshot(documentAlignment, (doc) => {
+  if (doc.exists()) {
+    const alignment = doc.data().alignment;
+    if (alignment === "horizontal") {
+      horizontalSquare.style.display = 'block';
+      verticalSquare.style.display = 'none';
+    } else if (alignment === "vertical") {
+      horizontalSquare.style.display = 'none';
+      verticalSquare.style.display = 'block';
+    }
+  }
 });
 
 function setLanguage(lang) {
@@ -78,6 +90,9 @@ function setEnglish() {
   welcome[1].textContent = "This is your home.";
   welcome[2].textContent = "From here you can change things!";
   finalProject.textContent = "Final Project Leon & Mateus";
+
+  horizontalButton.textContent = "horizontal";
+  verticalButton.textContent = "vertical";
 }
 
 function setGerman() {
@@ -86,6 +101,9 @@ function setGerman() {
   welcome[1].textContent = "Hier ist dein Zuhause.";
   welcome[2].textContent = "Von hier aus kannst du vieles ändern!";
   finalProject.textContent = "Abschlussprojekt Leon & Mateus";
+
+  horizontalButton.textContent = "Horizontal";
+  verticalButton.textContent = "Vertikal";
 }
 
 function setFrench() {
@@ -94,10 +112,31 @@ function setFrench() {
   welcome[1].textContent = "Ici, c'est chez toi.";
   welcome[2].textContent = "À partir d'ici, tu peux changer beaucoup de choses !";
   finalProject.textContent = "Projet de fin d'études Leon & Mateus";
+
+  horizontalButton.textContent = "horizontale";
+  verticalButton.textContent = "vertical";
 }
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.language));
+});
+ 
+// ---------- //
+
+const horizontalButton = document.querySelector('.horizontal');
+const verticalButton = document.querySelector('.vertical');
+const horizontalSquare = document.querySelector(".square-horizontal")
+const verticalSquare = document.querySelector(".square-vertical")
+
+horizontalButton.addEventListener('click', () => {
+  setDoc(documentAlignment, { alignment: 'horizontal' })
+  horizontalSquare.style.display = 'block';
+  verticalSquare.style.display = 'none';
+});
+verticalButton.addEventListener('click', () => {
+  setDoc(documentAlignment, { alignment: 'vertical' })
+  horizontalSquare.style.display = 'none';
+  verticalSquare.style.display = 'block';
 });
 
 updateLanguage();

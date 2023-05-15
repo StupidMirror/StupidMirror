@@ -36,7 +36,7 @@ h1 {
   font-size: 300%;
   font-weight: 400;
 }
-#final-project {
+.final-project {
   position: absolute;
   bottom: 1%;
   right: 0; 
@@ -71,4 +71,108 @@ h1 {
     padding-bottom: 3px;
     border-radius: 40%;
     background-color: var(--accent-color2);
+}
+
+.line {
+    width: 90%;
+    height: 5px;
+    background-color: var(--accent-color2);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.horizontal, .vertical {
+  display: inline-block;
+  padding-top: 2%;
+  padding-left: 20%;
+  font-size: 300%;
+  font-weight: 400;
+}
+
+.square-horizontal {
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2%;
+  width: 80%;
+  padding-bottom: 50%;
+  border: 3px solid white;
+}
+.date-horizontal {
+  font-size: 500%;
+  
+  position: absolute;
+  right: 2%;
+  top: 35%; 
+}
+.time-horizontal {
+  font-size: 900%;
+
+  position: absolute;
+  right: 2%;
+  top: 47%; 
+}
+.news-horizontal {
+  font-size: 300%;
+
+  position: absolute;
+  left: 2%;
+  top: 2%; 
+}
+.reminder-horizontal {
+  font-size: 300%;
+
+  position: absolute;
+  left: 2%;
+  bottom: 30%; 
+}
+.weather-horizontal {
+  font-size: 300%;
+
+  position: absolute;
+  right: 2%;
+  bottom: 10%; 
+}
+
+
+.square-vertical {
+  display: none;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2%;
+  width: 50%;
+  padding-bottom: 80%;
+  border: 3px solid white;
+}
+.date-vertical {
+  font-size: 500%;
+  
+  position: absolute;
+  right: 4%;
+  top: 17%; 
+}
+.time-vertical {
+  font-size: 900%;
+
+  position: absolute;
+  right: 4%;
+  top: 0%; 
+}
+.news-vertical {
+  font-size: 300%;
+  display: none;
+}
+.reminder-vertical {
+  font-size: 300%;
+  display: none;
+}
+.weather-vertical {
+  font-size: 300%;
+  display: none;
 }

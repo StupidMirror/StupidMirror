@@ -106,14 +106,22 @@ setInterval(() => {
 // -------------------------------- //
 // News
 
+const collectionNews = collection(db, 'news');
 const apiKey = '5c38cd27597c4b0db417109814070b7c';
 const apiUrl = `https://newsapi.org/v2/top-headlines?language=de&apiKey=${apiKey}`;
 
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    data.articles.forEach(articles => {
-      
-    });
-  })
-  .catch(error => console.error(error));
+function newsUpdate() {
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      data.articles.forEach(article => {
+        const documentNews = doc(collectionNews, article.author);
+        const authorPart = ` - ${article.author}`;
+        const modifiedTitle = article.title.replace(authorPart, "");
+        setDoc(documentNews, { title: article.title })
+          .then(() => updateDoc(documentNews, { title: `${modifiedTitle}` }))
+          .catch(error => console.error(error));
+      });
+    })
+    .catch(error => console.error(error));
+}
