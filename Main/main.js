@@ -24,6 +24,7 @@ onSnapshot(documentLanguage, (doc) => {
     language = doc.data().language;
     timeUpdate(language)
     mottoUpdate(language)
+    newsUpdate()
   } else {
     language = defaultLanguage;
   }
@@ -108,20 +109,20 @@ setInterval(() => {
 
 const collectionNews = collection(db, 'news');
 const apiKey = '5c38cd27597c4b0db417109814070b7c';
-const apiUrl = `https://newsapi.org/v2/top-headlines?language=de&apiKey=${apiKey}`;
+const apiUrl = `https://newsapi.org/v2/top-headlines?language=${language}&apiKey=${apiKey}`;
 
+const newsTitle = []
+const newsAuthor = []
 function newsUpdate() {
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       data.articles.forEach(article => {
-        const documentNews = doc(collectionNews, article.author);
         const authorPart = ` - ${article.author}`;
         const modifiedTitle = article.title.replace(authorPart, "");
-        setDoc(documentNews, { title: article.title })
-          .then(() => updateDoc(documentNews, { title: `${modifiedTitle}` }))
-          .catch(error => console.error(error));
+        newsAuthor.push(article.author)
+        newsTitle.push(modifiedTitle)
       });
+      console.log(newsAuthor)
     })
-    .catch(error => console.error(error));
 }
