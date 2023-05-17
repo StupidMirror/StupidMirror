@@ -24,6 +24,14 @@ const languageButtons = document.querySelectorAll(".language-button");
 const title = document.getElementById("title");
 const welcome = document.querySelectorAll(".welcome-text");
 const finalProject = document.querySelectorAll("final-project");
+const submitName = document.querySelector('.submit-name');
+const module_text = document.querySelectorAll(".text-module");
+const module_text_reminder = document.querySelector(".reminder-text");
+const reminderDate = document.querySelector('.reminder-event');
+const reminderTime = document.querySelector('.reminder-date');
+const reminderSubmit = document.querySelector('.submit');
+const inputDate = document.getElementById('input-date');
+const inputTime = document.getElementById('input-time');
 const defaultLanguage = "en";
 
 
@@ -51,9 +59,13 @@ onSnapshot(documentAlignment, (doc) => {
     if (alignment === "horizontal") {
       horizontalSquare.style.display = 'block';
       verticalSquare.style.display = 'none';
+      horizontalButton.classList.add('active');
+      verticalButton.classList.remove('active');
     } else if (alignment === "vertical") {
       horizontalSquare.style.display = 'none';
       verticalSquare.style.display = 'block';
+      horizontalButton.classList.remove('active');
+      verticalButton.classList.add('active');
     }
   }
 });
@@ -91,8 +103,18 @@ function setEnglish() {
   welcome[2].textContent = "From here you can change things!";
   finalProject.textContent = "Final Project Leon & Mateus";
 
-  horizontalButton.textContent = "horizontal";
-  verticalButton.textContent = "vertical";
+  horizontalButton.textContent = "Horizontal";
+  verticalButton.textContent = "Vertical";
+
+  module_text[0].textContent = "Time & Date"
+  module_text[1].textContent = "News"
+  module_text[2].textContent = "Motto"
+  module_text[3].textContent = "Weather"
+  module_text_reminder.textContent = "Reminder"
+
+  reminderDate.textContent = "Event"
+  reminderTime.textContent = "Date"
+  reminderSubmit.textContent = "Submit"
 }
 
 function setGerman() {
@@ -104,6 +126,16 @@ function setGerman() {
 
   horizontalButton.textContent = "Horizontal";
   verticalButton.textContent = "Vertikal";
+
+  module_text[0].textContent = "Zeit & Datum"
+  module_text[1].textContent = "Neuigkeiten"
+  module_text[2].textContent = "Motto"
+  module_text[3].textContent = "Wetter"
+  module_text_reminder.textContent = "Erinnerungen"
+
+  reminderDate.textContent = "Ereignis"
+  reminderTime.textContent = "Datum"
+  reminderSubmit.textContent = "Bestätigen"
 }
 
 function setFrench() {
@@ -113,14 +145,24 @@ function setFrench() {
   welcome[2].textContent = "À partir d'ici, tu peux changer beaucoup de choses !";
   finalProject.textContent = "Projet de fin d'études Leon & Mateus";
 
-  horizontalButton.textContent = "horizontale";
-  verticalButton.textContent = "vertical";
+  horizontalButton.textContent = "Horizontale";
+  verticalButton.textContent = "Vertical";
+
+  module_text[0].textContent = "Heure & date"
+  module_text[1].textContent = "Actualités"
+  module_text[2].textContent = "Devise"
+  module_text[3].textContent = "Météo"
+  module_text_reminder.textContent = "Rappel"
+
+  reminderDate.textContent = "Événement"
+  reminderTime.textContent = "Date"
+  reminderSubmit.textContent = "Envoyer"
 }
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.language));
 });
- 
+
 // ---------- //
 
 const horizontalButton = document.querySelector('.horizontal');
@@ -132,11 +174,61 @@ horizontalButton.addEventListener('click', () => {
   setDoc(documentAlignment, { alignment: 'horizontal' })
   horizontalSquare.style.display = 'block';
   verticalSquare.style.display = 'none';
+  horizontalButton.classList.add('active');
+  verticalButton.classList.remove('active');
 });
 verticalButton.addEventListener('click', () => {
   setDoc(documentAlignment, { alignment: 'vertical' })
   horizontalSquare.style.display = 'none';
   verticalSquare.style.display = 'block';
+  horizontalButton.classList.remove('active');
+  verticalButton.classList.add('active');
 });
+
+welcome[0].addEventListener("click", () => {
+  var nameUpdate = document.querySelector(".nameUpdate");
+  var computedStyle = window.getComputedStyle(nameUpdate);
+  var displayValue = computedStyle.getPropertyValue("display");
+  if (displayValue === "none") {
+    nameUpdate.style.display = 'block'
+  } else {
+    nameUpdate.style.display = 'none'
+  }
+})
+
+function setName() {
+  var textInput = document.querySelector(".input-name").value;
+  updateDoc(documentUser, { name: `${textInput}` });
+  document.querySelector(".nameUpdate").style.display = 'none';
+}
+submitName.addEventListener("click", setName);
+
+
+const currentDate = new Date();
+const year = currentDate.getFullYear();
+const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+const day = currentDate.getDate().toString().padStart(2, '0');
+const time = currentDate.getHours();
+
+inputDate.value = `${year}-${month}-${day}`;
+inputTime.value = `${time}:00`
+
+
+function createNewDok() {
+  const randomTitle = Math.random().toString(36).substring(7);
+
+  const textInput = document.querySelector('.input-text').value;
+  const dateInput = document.querySelector('.input-date').value;
+  const timeInput = document.querySelector('.input-time').value;
+
+  setDoc(doc(db, "reminder", randomTitle), {
+    text: textInput,
+    date: dateInput,
+    time: timeInput
+  });
+}
+reminderSubmit.addEventListener("click", createNewDok);
+
+
 
 updateLanguage();

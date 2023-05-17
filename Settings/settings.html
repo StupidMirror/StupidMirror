@@ -7,9 +7,12 @@
     </head>
 
     <body>
-
         <h1 id="title">Stupid Mirror Configuration</h1>
-        <p class="welcome-text">Welcome, [Name]!</p>
+        <p class="welcome-text">Welcome, !</p>
+        <div class="nameUpdate">
+            <input type="text" class="input-name" maxlength="12">
+            <button class="submit-name">Submit</button>
+        </div>
         <p class="welcome-text">This is your home.</p>
         <p class="welcome-text">From here you can change things!</p>
 
@@ -43,25 +46,40 @@
         </div>
         <div class="module-time">
             <p class="text-module">Time & Date</p>
-            
+            <label class="switch">
+                <input type="checkbox">
+                <span class="time-slide"></span>
+              </label>
         </div>
         <div class="module-news">
             <p class="text-module">News</p>
-            
+            <label class="switch">
+                <input type="checkbox">
+                <span class="news-slide"></span>
+              </label>
         </div>
         <div class="module-motto">
             <p class="text-module">Motto</p>
-            
+            <label class="switch">
+                <input type="checkbox">
+                <span class="motto-slide"></span>
+              </label>
         </div>
         <div class="module-Weather">
             <p class="text-module">Weather</p>
-            
+            <label class="switch">
+                <input type="checkbox">
+                <span class="weather-slide"></span>
+              </label>
         </div>
         <div class="module-reminder">
             <p class="reminder-text">Reminder</p>
             <p class="reminder-event">Event</p>
             <p class="reminder-date">Date</p>
-            <input type="text" class="input-text">
+            <input type="text" class="input-text" maxlength="20">
+            <input type="date" id="input-date" class="input-date">
+            <input type="time" id="input-time" class="input-time">
+            <button class="submit">Submit</button>
         </div>
         
         <div class="choose_lang">
@@ -73,6 +91,12 @@
         <p class="final-project">Final Project Leon & Mateus</p>
 
     </body>
+
+    <script>
+    const inputDate = document.getElementById('input-date');
+    const today = new Date().toISOString().split('T')[0];
+    inputDate.setAttribute('min', today);
+    </script>
 
     <script src="../Webpack/settings.js"></script>
 </html>
