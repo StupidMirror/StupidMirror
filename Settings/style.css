@@ -1,198 +1,249 @@
 :root {
-    --background: #343A40;
-    --text-color: #F8F9FA;
-    --accent-color: #495057;
-    --accent-color2: #ADB5BD;
+  --background: #343A40;
+  --text-color: #F8F9FA;
+  --accent-color: #495057;
+  --accent-color2: #ADB5BD;
 
-    --font: sans-serif;
+  --font: sans-serif;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-    color: var(--text-color);
-    font-family: var(--font);
+  color: var(--text-color);
+  font-family: var(--font);
 }
 body {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 
-  margin-top: 13%;
-  margin-bottom: 100px;
+margin-top: 13%;
+margin-bottom: 100px;
 
-  font-size: 400%;
-  font-weight: 800;
+font-size: 400%;
+font-weight: 800;
 }
 .welcome-text {
-  display: flex;
-  margin-left: 70px;
+display: flex;
+margin-left: 70px;
 
-  font-size: 300%;
-  font-weight: 400;
+font-size: 300%;
+font-weight: 400;
 }
 .final-project {
-  position: relative;
-  margin-top: 1%;
-  text-align: center;
-  color: var(--accent-color2);
-  font-size: 200%;
-  font-weight: 400;
+position: relative;
+margin-top: 1%;
+text-align: center;
+color: var(--accent-color2);
+font-size: 200%;
+font-weight: 400;
 }
 
 
 
 
 .choose_lang {
-    font-size: 30px;
-    width: max-content;
-    padding: 10px;
-    border-radius: 25px;
-    background-color: var(--accent-color);
-    
-    position: absolute;
-    top: 3%;
-    left: 7%
+  font-size: 30px;
+  width: max-content;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--accent-color);
+  
+  position: absolute;
+  top: 3%;
+  left: 7%
 }
 
 .language-button.active {
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 40%;
-    background-color: var(--accent-color2);
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 40%;
+  background-color: var(--accent-color2);
 }
 
 .line {
-    width: 90%;
-    height: 5px;
-    background-color: var(--accent-color2);
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 5%;
-    margin-bottom: 5px;
-    border-radius: 10px;
+  width: 90%;
+  height: 5px;
+  background-color: var(--accent-color2);
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 .alignment {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2% 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 2% 0;
 }
 .horizontal,
 .vertical {
-  font-size: 300%;
-  flex: 1;
-  text-align: center;
+font-size: 300%;
+flex: 1;
+text-align: center;
 }
 
 .square-horizontal {
-  position: relative;
-  left: 0;
-  right: 0;
-  margin: auto;
-  margin-top: 2%;
-  width: 80%;
-  padding-bottom: 50%;
-  border: 3px solid white;
+position: relative;
+left: 0;
+right: 0;
+margin: auto;
+margin-top: 2%;
+width: 80%;
+padding-bottom: 50%;
+border: 3px solid white;
 }
 .date-horizontal {
-  font-size: 500%;
-  
-  position: absolute;
-  right: 2%;
-  top: 35%; 
+font-size: 500%;
+
+position: absolute;
+right: 2%;
+top: 35%; 
 }
 .time-horizontal {
-  font-size: 900%;
+font-size: 900%;
 
-  position: absolute;
-  right: 2%;
-  top: 47%; 
+position: absolute;
+right: 2%;
+top: 47%; 
 }
 .news-horizontal {
-  font-size: 300%;
+font-size: 300%;
 
-  position: absolute;
-  left: 2%;
-  top: 2%; 
+position: absolute;
+left: 2%;
+top: 2%; 
 }
 .reminder-horizontal {
-  font-size: 300%;
+font-size: 300%;
 
-  position: absolute;
-  left: 2%;
-  bottom: 30%; 
+position: absolute;
+left: 2%;
+bottom: 30%; 
 }
 .weather-horizontal {
-  font-size: 300%;
+font-size: 300%;
 
-  position: absolute;
-  right: 2%;
-  bottom: 10%; 
+position: absolute;
+right: 2%;
+bottom: 10%; 
 }
 
 
 .square-vertical {
-  display: none;
-  position: relative;
-  left: 0;
-  right: 0;
-  margin: auto;
-  margin-top: 2%;
-  width: 50%;
-  padding-bottom: 80%;
-  border: 3px solid white;
+display: none;
+position: relative;
+left: 0;
+right: 0;
+margin: auto;
+margin-top: 2%;
+width: 50%;
+padding-bottom: 80%;
+border: 3px solid white;
 }
 .date-vertical {
-  font-size: 500%;
-  
-  position: absolute;
-  right: 4%;
-  top: 17%; 
+font-size: 500%;
+
+position: absolute;
+right: 4%;
+top: 17%; 
 }
 .time-vertical {
-  font-size: 900%;
+font-size: 900%;
 
-  position: absolute;
-  right: 4%;
-  top: 0%; 
+position: absolute;
+right: 4%;
+top: 0%; 
 }
 .news-vertical {
-  font-size: 300%;
+font-size: 300%;
 
-  width: max-content;
-  position: absolute;
-  bottom: 4%;
-  left: 50%;
-  transform: translateX(-50%);
+width: max-content;
+position: absolute;
+bottom: 4%;
+left: 50%;
+transform: translateX(-50%);
 }
 .reminder-vertical {
-  font-size: 300%;
-  position: absolute;
-  top: 28%;
-  right: 4%;
+font-size: 300%;
+position: absolute;
+top: 28%;
+right: 4%;
 }
 .weather-vertical {
-  font-size: 300%;
-  display: none;
+font-size: 300%;
+display: none;
 }
 
 
 .module-text {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 
-  margin-top: 1%;
-  margin-bottom: 10px;
+margin-top: 1%;
+margin-bottom: 10px;
 
-  font-size: 350%;
-  font-weight: 800;
+font-size: 350%;
+font-weight: 800;
+}
+
+
+
+.module-reminder {
+position: relative;
+left: 5%;
+margin-top: 2%;
+width: 90%;
+padding-bottom: 20%;
+border: 3px solid white;
+}
+.text-module {
+display: flex;
+margin-left: 70px;
+
+font-size: 300%;
+font-weight: 400;
+}
+
+.reminder-text, .reminder-event, .reminder-date, .input-text {
+position: absolute;
+left: 3%;
+top: 4%;
+
+font-size: 300%;
+font-weight: 400;
+}
+.reminder-event {
+left: 7%;
+top: 30%;
+}
+.reminder-date {
+left: 60%;
+top: 30%;
+}
+.input-text {
+  left: 7%;
+  top: 60%;
+
+  width: 50%;
+  height: 25%;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  caret-color: var(--text-color);
+}
+.input-text:focus {
+  outline: 4px solid var(--accent-color2);
+  font-size: 220%;
 }

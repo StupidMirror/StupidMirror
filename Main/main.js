@@ -24,7 +24,6 @@ onSnapshot(documentLanguage, (doc) => {
     language = doc.data().language;
     timeUpdate(language)
     mottoUpdate(language)
-    newsUpdate()
   } else {
     language = defaultLanguage;
   }
