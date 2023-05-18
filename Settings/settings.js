@@ -115,6 +115,7 @@ function setEnglish() {
   reminderDate.textContent = "Event"
   reminderTime.textContent = "Date"
   reminderSubmit.textContent = "Submit"
+  submitName.textContent = "Submit"
 }
 
 function setGerman() {
@@ -136,6 +137,7 @@ function setGerman() {
   reminderDate.textContent = "Ereignis"
   reminderTime.textContent = "Datum"
   reminderSubmit.textContent = "Bestätigen"
+  submitName.textContent = "Bestätigen"
 }
 
 function setFrench() {
@@ -157,6 +159,7 @@ function setFrench() {
   reminderDate.textContent = "Événement"
   reminderTime.textContent = "Date"
   reminderSubmit.textContent = "Envoyer"
+  submitName.textContent = "Envoyer"
 }
 
 languageButtons.forEach((button) => {
