@@ -20,32 +20,54 @@ body {
 
 #date-text {
     position: absolute;
-    padding: 20px;
-    right: 10px;
-    bottom: 420px;
-    font-size: 50px;
+    right: 2%;
+    bottom: 50%;
+    font-size: 400%;
 }
 #time-text {
     position: absolute;
-    padding: 20px;
-    right: 100px;
-    bottom: 250px;
-    font-size: 160px;
+    right: 9%;
+    bottom: 26%;
+    font-size: 1400%;
+    font-weight: 600;
 }
 #sec-text {
     position: absolute;
-    padding: 20px;
-    right: 10px;
-    bottom: 330px;
-    font-size: 80px;
+    right: 2%;
+    bottom: 38%;
+    font-size: 700%;
+    font-weight: 600;
     color: var(--accent-color);
 }
 
 
 #motto-text {
     position: absolute;
-    padding: 20px;
-    left: 20px;
-    top: 20px;
-    font-size: 70px;
+    left: 2%;
+    top: 2%;
+    font-size: 400%;
 }
+
+
+#event-text {
+    position: absolute;
+    top: -25%;
+    font-size: 120%;
+    font-weight: 600;
+    width: max-content;
+}
+.module-event {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    font-size: 350%;
+    font-weight: 200;
+}
+events {
+    display: block;
+    max-width: max-content;
+}
+  

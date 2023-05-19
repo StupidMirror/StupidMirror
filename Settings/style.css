@@ -306,6 +306,16 @@ top: 14%;
 .submit:active {
   background-color: var(--accent-color3);
 }
+.error-text {
+  display: none;
+  color: #ef233c;
+  position: absolute;
+  width: 55%;
+  top: 50%;
+  left: 7%;
+  font-size: 200%;
+  font-weight: 400;
+}
 
 .module-time, .module-news, .module-motto, .module-weather, .module-reminder {
   display: flex;

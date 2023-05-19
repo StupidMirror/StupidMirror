@@ -1,5 +1,5 @@
 const { initializeApp } = require('firebase/app');
-const { getFirestore, collection, doc, setDoc, updateDoc, getDoc, onSnapshot } = require('firebase/firestore');
+const { getFirestore, collection, doc, setDoc, updateDoc, getDoc, onSnapshot, DocumentReference } = require('firebase/firestore');
 
 const firebaseConfig = {
     apiKey: "AIzaSyBlNYiHyqfC0mmeKtcoHbP1jw-7UxviNn4",
@@ -30,8 +30,10 @@ const module_text_reminder = document.querySelector(".reminder-text");
 const reminderDate = document.querySelector('.reminder-event');
 const reminderTime = document.querySelector('.reminder-date');
 const reminderSubmit = document.querySelector('.submit');
+const inputText = document.querySelector('.input-text');
 const inputDate = document.getElementById('input-date');
 const inputTime = document.getElementById('input-time');
+const errorText = document.querySelector('.error-text');
 const defaultLanguage = "en";
 
 
@@ -115,6 +117,7 @@ function setEnglish() {
   reminderDate.textContent = "Event"
   reminderTime.textContent = "Date"
   reminderSubmit.textContent = "Submit"
+  errorText.textContent = "The event must have at least 5 letters";
   submitName.textContent = "Submit"
 }
 
@@ -137,6 +140,7 @@ function setGerman() {
   reminderDate.textContent = "Ereignis"
   reminderTime.textContent = "Datum"
   reminderSubmit.textContent = "Bestätigen"
+  errorText.textContent = "Das Event muss mindestens 5 Buchstaben besitzen";
   submitName.textContent = "Bestätigen"
 }
 
@@ -159,6 +163,7 @@ function setFrench() {
   reminderDate.textContent = "Événement"
   reminderTime.textContent = "Date"
   reminderSubmit.textContent = "Envoyer"
+  errorText.textContent = "L'événement doit comporter au moins 5 lettres";
   submitName.textContent = "Envoyer"
 }
 
@@ -224,13 +229,89 @@ function createNewDok() {
   const dateInput = document.querySelector('.input-date').value;
   const timeInput = document.querySelector('.input-time').value;
 
+  if (textInput.length < 5) {
+    errorText.style.display = "block";
+    return;
+  }
+
   setDoc(doc(db, "reminder", randomTitle), {
     text: textInput,
     date: dateInput,
-    time: timeInput
+    time: timeInput,
+    check: 'a'
+  });
+
+  const moduleReminder = document.querySelector('.module-reminder');
+  moduleReminder.style.border = '3px solid #4c956c';
+
+  setTimeout(() => {
+    moduleReminder.style.border = '3px solid white';
+  }, 500);
+
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+  const day = currentDate.getDate().toString().padStart(2, '0');
+  const time = currentDate.getHours();
+
+  inputDate.value = `${year}-${month}-${day}`;
+  inputTime.value = `${time}:00`
+  inputText.value = '';
+  errorText.style.display = "none";
+}
+
+reminderSubmit.addEventListener("click", createNewDok);
+
+
+function toggleSwitch(element, documentRef) {
+  const checked = element.checked;
+  const value = { boolean: checked };
+
+  try {
+    updateDoc(documentRef, value);
+  } catch (error) {
+    console.error('Fehler beim Aktualisieren des Dokuments:', error);
+  }
+}
+const documentTime = doc(collectionSettings, 'time');
+const documentNews = doc(collectionSettings, 'news');
+const documentMotto = doc(collectionSettings, 'motto');
+const documentWeather = doc(collectionSettings, 'weather');
+const documentReminder = doc(collectionSettings, 'reminder');
+var switchElementTime = document.querySelector('.module-time .switch input');
+switchElementTime.addEventListener('click', () => {
+  toggleSwitch(switchElementTime, documentTime);
+});
+var switchElementNews = document.querySelector('.module-news .switch input');
+switchElementNews.addEventListener('click', () => {
+  toggleSwitch(switchElementNews, documentNews);
+});
+var switchElementMotto = document.querySelector('.module-motto .switch input');
+switchElementMotto.addEventListener('click', () => {
+  toggleSwitch(switchElementMotto, documentMotto);
+});
+var switchElementWeather = document.querySelector('.module-weather .switch input');
+switchElementWeather.addEventListener('click', () => {
+  toggleSwitch(switchElementWeather, documentWeather);
+});
+var switchElementReminder = document.querySelector('.module-reminder .switch input');
+switchElementReminder.addEventListener('click', () => {
+  toggleSwitch(switchElementReminder, documentReminder);
+});
+function setSwitchCheckedState(switchElement, documentRef) {
+  onSnapshot(documentRef, (doc) => {
+    if (doc.exists()) {
+      switchElement.checked = doc.data().boolean;
+    }
   });
 }
-reminderSubmit.addEventListener("click", createNewDok);
+
+setSwitchCheckedState(switchElementTime, documentTime);
+setSwitchCheckedState(switchElementNews, documentNews);
+setSwitchCheckedState(switchElementMotto, documentMotto);
+setSwitchCheckedState(switchElementWeather, documentWeather);
+setSwitchCheckedState(switchElementReminder, documentReminder);
+
 
 
 
