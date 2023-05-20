@@ -140,8 +140,6 @@ setInterval(() => {
 // -------------------------------- //
 // Reminders
 
-
-
 function eventLanguage(language) {
   const eventModuleText = document.getElementById("event-text");
   
@@ -224,6 +222,21 @@ function reminderUpdate() {
       events[2].textContent = `${ifToday(dateArray[2])} - ${timeArray[2]} | ${textArray[2]}`
       events[3].textContent = `${ifToday(dateArray[3])} - ${timeArray[3]} | ${textArray[3]}`
       events[4].textContent = `${ifToday(dateArray[4])} - ${timeArray[4]} | ${textArray[4]}`
+      if (dateArray.length <= 0) {
+        events[0].textContent = "-";
+      }
+      if (dateArray.length <= 1) {
+        events[1].textContent = "-";
+      }
+      if (dateArray.length <= 2) {
+        events[2].textContent = "-";
+      }
+      if (dateArray.length <= 3) {
+        events[3].textContent = "-";
+      }
+      if (dateArray.length <= 4) {
+        events[4].textContent = "-";
+      }
     })
   .catch(error => {
     console.error('Error:', error);

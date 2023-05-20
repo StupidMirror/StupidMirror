@@ -64,7 +64,7 @@ font-weight: 400;
 }
 .submit-name {
   position: absolute;
-  font-size: 300%;
+  font-size: 250%;
   width: max-content;
   padding-left: 2%;
   padding-right: 2%;
@@ -267,7 +267,7 @@ top: 14%;
 left: 65%;
 top: 14%;
 }
-.input-date, .input-text, .input-time, .submit {
+.input-date, .input-text, .input-time, .submit, .deleteReminder {
   position: absolute;
   font-size: 220%;
   width: 30%;
@@ -304,6 +304,15 @@ top: 14%;
   bottom: 4%;
 }
 .submit:active {
+  background-color: var(--accent-color3);
+}
+.deleteReminder {
+  border-radius: 100px;
+  width: max-content + 5%;
+  right: 37%;
+  bottom: 4%;
+}
+.deleteReminder.active {
   background-color: var(--accent-color3);
 }
 .error-text {
@@ -398,4 +407,37 @@ input:checked + .reminder-slide:before   {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+#container {
+  position: relative;
+  left: 5%;
+  margin-top: 5%;
+  width: 80%;
+  border: 3px solid white;
+  font-size: 300%;
+  font-weight: 200;
+  display: none;
+}
+
+#container p {
+  position: relative;
+  padding-left: 1%;
+  padding-bottom: 6%;
+}
+
+#container button {
+  position: absolute;
+  font-size: 70%;
+  font-weight: 200;
+  width: max-content;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 2%;
+  margin-top: -6%;
+
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: var(--accent-color);
+  border-radius: 100px;
 }

@@ -1,5 +1,5 @@
 const { initializeApp } = require('firebase/app');
-const { getFirestore, collection, doc, setDoc, updateDoc, getDoc, onSnapshot, DocumentReference } = require('firebase/firestore');
+const { getFirestore, collection, doc, setDoc, updateDoc, getDoc, getDocs, onSnapshot, query, where, getCountFromServer } = require('firebase/firestore');
 
 const firebaseConfig = {
     apiKey: "AIzaSyBlNYiHyqfC0mmeKtcoHbP1jw-7UxviNn4",
@@ -34,6 +34,7 @@ const inputText = document.querySelector('.input-text');
 const inputDate = document.getElementById('input-date');
 const inputTime = document.getElementById('input-time');
 const errorText = document.querySelector('.error-text');
+var container = document.getElementById('container');
 const defaultLanguage = "en";
 
 
@@ -258,9 +259,28 @@ function createNewDok() {
   inputTime.value = `${time}:00`
   inputText.value = '';
   errorText.style.display = "none";
+  clearContainer()
+  populateReminders();
 }
 
 reminderSubmit.addEventListener("click", createNewDok);
+
+
+const deleteReminderBtn = document.querySelector('.deleteReminder');
+container.style.display = "none";
+deleteReminderBtn.addEventListener('click', function() {
+  if (container.style.display === "none") {
+    clearContainer();
+    populateReminders();
+    container.style.display = "block";
+    deleteReminderBtn.classList.add('active');
+  } else {
+    container.style.display = "none";
+    deleteReminderBtn.classList.remove('active');
+  }
+});
+
+
 
 
 function toggleSwitch(element, documentRef) {
@@ -312,7 +332,108 @@ setSwitchCheckedState(switchElementMotto, documentMotto);
 setSwitchCheckedState(switchElementWeather, documentWeather);
 setSwitchCheckedState(switchElementReminder, documentReminder);
 
+const collectionReminder = collection(db, "reminder")
+function deleteReminderDoc() {
+  var parentDiv = this.parentNode;
+  var text = parentDiv.querySelector('p').textContent;
+  var splitArray = text.split(" - "); 
+
+  var date = splitArray[0];
+  var time = splitArray[1].split(" | ")[0];
+  var reminderText = splitArray[1].split(" | ")[1];
+  
+  const q = query(collectionReminder, where("time", "==", time), where("text", "==", reminderText));
+  
+  getDocs(q)
+    .then(snapshot => {
+      if (snapshot.docs.length > 0) {
+        const docRef = snapshot.docs[0].ref;
+        updateDoc(docRef, { check: "b" } )
+      }
+    })
+    .catch(error => {
+      console.error('Fehler beim Abrufen der Dokumente:', error);
+    });
+
+  parentDiv.remove();
+}
+
+function reminderUpdate() {
+  const q = query(collectionReminder, where("check", "==", "a"));
+
+  return getDocs(q)
+    .then(snapshot => {
+      const currentDate = new Date();
+
+      const sortedDocs = snapshot.docs
+        .filter(doc => {
+          const date = doc.data().date;
+          const time = doc.data().time;
+          const dateTime = new Date(`${date} ${time}`);
+          return dateTime > currentDate;
+        })
+        .sort((doc1, doc2) => {
+          const date1 = doc1.data().date;
+          const time1 = doc1.data().time;
+          const date2 = doc2.data().date;
+          const time2 = doc2.data().time;
+
+          const dateComparison = new Date(date1) - new Date(date2);
+          if (dateComparison !== 0) {
+            return dateComparison;
+          }
+
+          return time1.localeCompare(time2);
+        });
+
+      const timeArray = [];
+      const dateArray = [];
+      const textArray = [];
+
+      sortedDocs.forEach(doc => {
+        const { time, date, text } = doc.data();
+
+        const dateParts = date.split("-");
+        const day = dateParts[2];
+        const month = dateParts[1];
+        const formattedDate = `${day}.${month}`;
+
+        timeArray.push(time);
+        dateArray.push(formattedDate);
+        textArray.push(text);
+      });
+
+      return { timeArray, dateArray, textArray };
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      return { timeArray: [], dateArray: [], textArray: [] };
+    });
+}
+
+function populateReminders() {
+  reminderUpdate().then(data => {
+    const { timeArray, dateArray, textArray } = data;
+
+    for (var i = 0; i < timeArray.length; i++) {
+      var div = document.createElement('div'); 
+
+      var dateParagraph = document.createElement('p');
+      dateParagraph.textContent = `${dateArray[i]} - ${timeArray[i]} | ${textArray[i]}`;
+      div.appendChild(dateParagraph);
+      container.appendChild(div);
+
+      var button = document.createElement('button');
+      button.textContent = 'Löschen';
+      button.addEventListener('click', deleteReminderDoc);
+      div.appendChild(button);
+    }
+  });
+}
+function clearContainer() {
+  var container = document.getElementById('container');
+  container.innerHTML = '';
+}
 
 
-
-updateLanguage();
+updateLanguage()
