@@ -1,112 +1,109 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="utf-8">
-        <title>Stupid Mirror Settings</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stupid Mirror Settings</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <body>
-        <h1 id="title">Stupid Mirror Configuration</h1>
-        <p class="welcome-text">Welcome, !</p>
-        <div class="nameUpdate">
-            <input type="text" class="input-name" maxlength="12">
-            <button class="submit-name">Submit</button>
-        </div>
-        <p class="welcome-text">This is your home.</p>
-        <p class="welcome-text">From here you can change things!</p>
+  <body>
+    <h1 id="title">Stupid Mirror Configuration</h1>
+    <p class="welcome-text">Welcome, !</p>
+    <div class="nameUpdate">
+      <input type="text" class="input-name" maxlength="12" />
+      <button class="submit-name">Submit</button>
+    </div>
+    <p class="welcome-text">This is your home.</p>
+    <p class="welcome-text">From here you can change things!</p>
 
-        <hr class="line">
+    <hr class="line" />
 
-        <div class="alignment">
-            <p class="horizontal">horizontal</p>
-            <p class="vertical">vertical</p>
-        </div>
-        
-        <div class="square-horizontal">
-            <p class="date-horizontal">DATE</p>
-            <p class="time-horizontal">TIME</p>
-            <p class="news-horizontal">NEWS or MOTTO</p>
-            <p class="reminder-horizontal">REMINDER</p>
-            <p class="weather-horizontal">WEATHER</p>
-        </div> 
+    <div class="alignment">
+      <p class="horizontal">horizontal</p>
+      <p class="vertical">vertical</p>
+    </div>
 
-        <div class="square-vertical">
-            <p class="date-vertical">DATE</p>
-            <p class="time-vertical">TIME</p>
-            <p class="news-vertical">NEWS or MOTTO</p>
-            <p class="reminder-vertical">REMINDER</p>
-            <p class="weather-vertical">WEATHER</p>
-        </div> 
+    <div class="square-horizontal">
+      <p class="date-horizontal">DATE</p>
+      <p class="time-horizontal">TIME</p>
+      <p class="news-horizontal">NEWS or MOTTO</p>
+      <p class="reminder-horizontal">REMINDER</p>
+      <p class="weather-horizontal">WEATHER</p>
+    </div>
 
-        <hr class="line">
+    <div class="square-vertical">
+      <p class="date-vertical">DATE</p>
+      <p class="time-vertical">TIME</p>
+      <p class="news-vertical">NEWS or MOTTO</p>
+      <p class="reminder-vertical">REMINDER</p>
+      <p class="weather-vertical">WEATHER</p>
+    </div>
 
-        <div class="module">
-            <p class="module-text">Module</p>
-        </div>
-        <div class="module-time">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="time-slide"></span>
-              </label>
-            <p class="text-module">Time & Date</p>
-        </div>
-        <div class="module-news">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="news-slide"></span>
-              </label>
-            <p class="text-module">News</p>
-        </div>
-        <div class="module-motto">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="motto-slide"></span>
-              </label>
-            <p class="text-module">Motto</p>
-        </div>
-        <div class="module-weather">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="weather-slide"></span>
-              </label>
-            <p class="text-module">Weather</p>
-        </div>
-        <div class="module-reminder">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="reminder-slide"></span>
-              </label>
-            <p class="reminder-text">Reminder</p>
-            <p class="reminder-event">Event</p>
-            <p class="reminder-date">Date</p>
-            <input type="text" class="input-text" maxlength="20">
-            <input type="date" id="input-date" class="input-date">
-            <input type="time" id="input-time" class="input-time">
-            <p class="error-text"></p>
-            <button class="deleteReminder">Reminders</button>
-            <button class="submit">Submit</button>
-        </div>
-        
-        <div class="choose_lang">
-            <span class="language-button" data-language="en">EN</span>
-            <span class="language-button" data-language="de">DE</span>
-            <span class="language-button" data-language="fr">FR</span>
-        </div>
+    <hr class="line" />
 
-        <div id="container">
+    <div class="module">
+      <p class="module-text">Module</p>
+    </div>
+    <div class="module-time">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="time-slide"></span>
+      </label>
+      <p class="text-module">Time & Date</p>
+    </div>
+    <div class="module-news">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="news-slide"></span>
+      </label>
+      <p class="text-module">News</p>
+    </div>
+    <div class="module-motto">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="motto-slide"></span>
+      </label>
+      <p class="text-module">Motto</p>
+    </div>
+    <div class="module-weather">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="weather-slide"></span>
+      </label>
+      <p class="text-module">Weather</p>
+    </div>
+    <div class="module-reminder">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="reminder-slide"></span>
+      </label>
+      <p class="reminder-text">Reminder</p>
+      <p class="reminder-event">Event</p>
+      <p class="reminder-date">Date</p>
+      <input type="text" class="input-text" maxlength="20" />
+      <input type="date" id="input-date" class="input-date" />
+      <input type="time" id="input-time" class="input-time" />
+      <p class="error-text"></p>
+      <button class="deleteReminder">Reminders</button>
+      <button class="submit">Submit</button>
+    </div>
 
-        </div>
+    <div class="choose_lang">
+      <span class="language-button" data-language="en">EN</span>
+      <span class="language-button" data-language="de">DE</span>
+      <span class="language-button" data-language="fr">FR</span>
+    </div>
 
-        <p class="final-project">Final Project Leon & Mateus</p>
+    <div id="container"></div>
 
-    </body>
+    <p class="final-project">Final Project Leon & Mateus</p>
+  </body>
 
-    <script>
-    const inputDate = document.getElementById('input-date');
-    const today = new Date().toISOString().split('T')[0];
-    inputDate.setAttribute('min', today);
-    </script>
+  <script>
+    const inputDate = document.getElementById("input-date");
+    const today = new Date().toISOString().split("T")[0];
+    inputDate.setAttribute("min", today);
+  </script>
 
-    <script src="../Webpack/settings.js"></script>
+  <script src="../Webpack/settings.js"></script>
 </html>

@@ -1,8 +1,8 @@
 :root {
-  --background: #343A40;
-  --text-color: #F8F9FA;
+  --background: #343a40;
+  --text-color: #f8f9fa;
   --accent-color: #495057;
-  --accent-color2: #ADB5BD;
+  --accent-color2: #adb5bd;
   --accent-color3: #6c757d;
 
   --font: sans-serif;
@@ -20,36 +20,36 @@ body {
 }
 
 h1 {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
-margin-top: 8%;
-margin-bottom: 100px;
+  margin-top: 8%;
+  margin-bottom: 100px;
 
-font-size: 400%;
-font-weight: 800;
+  font-size: 400%;
+  font-weight: 800;
 }
 .welcome-text {
-display: flex;
-margin-left: 70px;
+  display: flex;
+  margin-left: 70px;
 
-font-size: 300%;
-font-weight: 400;
+  font-size: 300%;
+  font-weight: 400;
 }
 .final-project {
-position: relative;
-margin-top: 1%;
-text-align: center;
-color: var(--accent-color2);
-font-size: 200%;
-font-weight: 400;
+  position: relative;
+  margin-top: 1%;
+  text-align: center;
+  color: var(--accent-color2);
+  font-size: 200%;
+  font-weight: 400;
 }
 
 .nameUpdate {
   position: relative;
   display: none;
   padding-top: 10px;
-  padding-bottom: 10px; 
+  padding-bottom: 10px;
 }
 .input-name {
   position: relative;
@@ -81,17 +81,16 @@ font-weight: 400;
   background-color: var(--accent-color3);
 }
 
-
 .choose_lang {
   font-size: 30px;
   width: max-content;
   padding: 10px;
   border-radius: 25px;
   background-color: var(--accent-color);
-  
+
   position: absolute;
   top: 1%;
-  left: 7%
+  left: 7%;
 }
 
 .language-button.active {
@@ -115,16 +114,16 @@ font-weight: 400;
 }
 
 .alignment {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 2% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 0;
 }
 .horizontal,
 .vertical {
-font-size: 300%;
-flex: 1;
-text-align: center;
+  font-size: 300%;
+  flex: 1;
+  text-align: center;
 }
 .horizontal.active,
 .vertical.active {
@@ -133,141 +132,146 @@ text-align: center;
 }
 
 .square-horizontal {
-position: relative;
-left: 0;
-right: 0;
-margin: auto;
-margin-top: 2%;
-width: 80%;
-padding-bottom: 50%;
-border: 3px solid white;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2%;
+  width: 80%;
+  padding-bottom: 50%;
+  border: 3px solid white;
 }
 .date-horizontal {
-font-size: 500%;
+  font-size: 500%;
 
-position: absolute;
-right: 2%;
-top: 35%; 
+  position: absolute;
+  right: 2%;
+  top: 35%;
 }
 .time-horizontal {
-font-size: 900%;
+  font-size: 900%;
 
-position: absolute;
-right: 2%;
-top: 47%; 
+  position: absolute;
+  right: 2%;
+  top: 47%;
 }
 .news-horizontal {
-font-size: 300%;
+  font-size: 300%;
 
-position: absolute;
-left: 2%;
-top: 2%; 
+  position: absolute;
+  left: 2%;
+  top: 2%;
 }
 .reminder-horizontal {
-font-size: 300%;
+  font-size: 300%;
 
-position: absolute;
-left: 2%;
-bottom: 30%; 
+  position: absolute;
+  left: 2%;
+  bottom: 30%;
 }
 .weather-horizontal {
-font-size: 300%;
+  font-size: 300%;
 
-position: absolute;
-right: 2%;
-bottom: 10%; 
+  position: absolute;
+  right: 2%;
+  bottom: 10%;
 }
-
 
 .square-vertical {
-display: none;
-position: relative;
-left: 0;
-right: 0;
-margin: auto;
-margin-top: 2%;
-width: 50%;
-padding-bottom: 80%;
-border: 3px solid white;
+  display: none;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 2%;
+  width: 50%;
+  padding-bottom: 80%;
+  border: 3px solid white;
 }
 .date-vertical {
-font-size: 500%;
+  font-size: 500%;
 
-position: absolute;
-right: 4%;
-top: 17%; 
+  position: absolute;
+  right: 4%;
+  top: 17%;
 }
 .time-vertical {
-font-size: 900%;
+  font-size: 900%;
 
-position: absolute;
-right: 4%;
-top: 0%; 
+  position: absolute;
+  right: 4%;
+  top: 0%;
 }
 .news-vertical {
-font-size: 300%;
+  font-size: 300%;
 
-width: max-content;
-position: absolute;
-bottom: 4%;
-left: 50%;
-transform: translateX(-50%);
+  width: max-content;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .reminder-vertical {
-font-size: 300%;
-position: absolute;
-top: 28%;
-right: 4%;
+  font-size: 300%;
+  position: absolute;
+  top: 28%;
+  right: 4%;
 }
 .weather-vertical {
-font-size: 300%;
-display: none;
+  font-size: 300%;
+  display: none;
 }
 
-
 .module-text {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
-margin-top: 1%;
-margin-bottom: 10px;
+  margin-top: 1%;
+  margin-bottom: 10px;
 
-font-size: 350%;
-font-weight: 800;
+  font-size: 350%;
+  font-weight: 800;
 }
 
 .module-reminder {
-position: relative;
-left: 5%;
-width: 80%;
-padding-bottom: 35%;
-border: 3px solid white;
+  position: relative;
+  left: 5%;
+  width: 80%;
+  padding-bottom: 35%;
+  border: 3px solid white;
 }
 .text-module {
-display: flex;
-margin-left: 70px;
+  display: flex;
+  margin-left: 70px;
 
-font-size: 300%;
-font-weight: 400;
+  font-size: 300%;
+  font-weight: 400;
 }
 
-.reminder-text, .reminder-event, .reminder-date, .input-text {
-position: absolute;
-left: 2%;
-top: 1%;
+.reminder-text,
+.reminder-event,
+.reminder-date,
+.input-text {
+  position: absolute;
+  left: 2%;
+  top: 1%;
 
-font-size: 300%;
-font-weight: 400;
+  font-size: 300%;
+  font-weight: 400;
 }
 .reminder-event {
-left: 7%;
-top: 14%;
+  left: 7%;
+  top: 14%;
 }
 .reminder-date {
-left: 65%;
-top: 14%;
+  left: 65%;
+  top: 14%;
 }
-.input-date, .input-text, .input-time, .submit, .deleteReminder {
+.input-date,
+.input-text,
+.input-time,
+.submit,
+.deleteReminder {
   position: absolute;
   font-size: 220%;
   width: 30%;
@@ -289,7 +293,7 @@ top: 14%;
 }
 .input-time {
   left: 65%;
-  top: 53%; 
+  top: 53%;
 }
 .input-date:focus,
 .input-time:focus,
@@ -326,18 +330,23 @@ top: 14%;
   font-weight: 400;
 }
 
-.module-time, .module-news, .module-motto, .module-weather, .module-reminder {
+.module-time,
+.module-news,
+.module-motto,
+.module-weather,
+.module-reminder {
   display: flex;
   align-items: center;
 }
-.text-module, .reminder-text {
+.text-module,
+.reminder-text {
   margin-left: 9%;
 }
 .switch {
   position: relative;
   display: inline-block;
   margin-top: 5px;
-  margin-bottom: .5%;
+  margin-bottom: 0.5%;
   left: 7%;
   width: 60px;
   height: 34px;
@@ -351,9 +360,9 @@ top: 14%;
   width: 0;
   height: 0;
 }
-.time-slide, 
-.news-slide, 
-.motto-slide, 
+.time-slide,
+.news-slide,
+.motto-slide,
 .weather-slide,
 .reminder-slide {
   position: absolute;
@@ -363,13 +372,13 @@ top: 14%;
   right: 0;
   bottom: 0;
   background-color: var(--accent-color2);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.time-slide:before, 
-.news-slide:before, 
-.motto-slide:before, 
+.time-slide:before,
+.news-slide:before,
+.motto-slide:before,
 .weather-slide:before,
 .reminder-slide:before {
   position: absolute;
@@ -379,31 +388,31 @@ top: 14%;
   left: 4px;
   bottom: 4px;
   background-color: var(--text-color);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked + .time-slide, 
-input:checked + .news-slide, 
-input:checked + .motto-slide, 
+input:checked + .time-slide,
+input:checked + .news-slide,
+input:checked + .motto-slide,
 input:checked + .weather-slide,
-input:checked + .reminder-slide  {
+input:checked + .reminder-slide {
   background-color: var(--accent-color);
 }
 
-input:focus + .time-slide, 
-input:focus + .news-slide, 
-input:focus + .motto-slide, 
+input:focus + .time-slide,
+input:focus + .news-slide,
+input:focus + .motto-slide,
 input:focus + .weather-slide,
 input:focus + .reminder-slide {
   box-shadow: 0 0 1px var(--accent-color);
 }
 
-input:checked + .time-slide:before, 
-input:checked + .news-slide:before, 
-input:checked + .motto-slide:before, 
+input:checked + .time-slide:before,
+input:checked + .news-slide:before,
+input:checked + .motto-slide:before,
 input:checked + .weather-slide:before,
-input:checked + .reminder-slide:before   {
+input:checked + .reminder-slide:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
