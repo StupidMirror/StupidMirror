@@ -22,45 +22,54 @@ body {
   position: absolute;
   right: 2%;
   bottom: 50%;
-  font-size: 400%;
+  font-size: 4vw;
 }
 #time-text {
   position: absolute;
-  right: 9%;
+  right: 10%;
   bottom: 26%;
-  font-size: 1400%;
+  font-size: 14vw;
   font-weight: 600;
 }
 #sec-text {
   position: absolute;
   right: 2%;
   bottom: 38%;
-  font-size: 700%;
+  font-size: 7vw;
   font-weight: 600;
   color: var(--accent-color);
 }
 
+.module-motto {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 1%;
+  margin-top: -13%;
+  max-width: 50vw;
+}
 #motto-text {
   position: absolute;
-  left: 2%;
-  top: 2%;
-  font-size: 400%;
+  font-size: 3vw;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
 }
 
 .module-event {
   display: flex;
   flex-direction: column;
-
   position: absolute;
   left: 2%;
-  bottom: 2%;
-  font-size: 350%;
+  top: 10%;
+  font-size: 3vw;
   font-weight: 200;
 }
 #event-text {
   position: absolute;
   top: -25%;
-  font-size: 120%;
   font-weight: 600;
   width: max-content;
 }
@@ -73,12 +82,12 @@ events {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: 2%;
-  margin-right: 32%;
-  margin-top: 2%;
+  margin-left: 1%;
+  margin-top: 25%;
+  max-width: 50vw;
 }
 #news-text {
-  font-size: 300%;
+  font-size: 3vw;
   font-weight: 600;
   left: 0;
   right: 0;
@@ -86,7 +95,7 @@ events {
   text-align: center;
 }
 #newsTime-text {
-  font-size: 150%;
+  font-size: 2vw;
   font-weight: 100;
   width: max-content;
   text-align: center;
@@ -101,38 +110,55 @@ events {
 }
 .weathers {
   position: absolute;
-  font-size: 250%;
+  font-size: 2vw;
   font-weight: 200;
 }
 .times {
   position: absolute;
-  font-size: 350%;
+  font-size: 4vw;
   font-weight: 600;
+}
+.icons {
+  position: absolute;
+  height: 17vh;
 }
 #w0 {
   right: 32%;
-  bottom: 12%;
+  bottom: 8%;
 }
 #w1 {
-  right: 17%;
-  bottom: 12%;
+  right: 19%;
+  bottom: 8%;
 }
 #w2 {
-  right: 2%;
-  bottom: 12%;
+  right: 7%;
+  bottom: 8%;
 }
 #t0 {
-  right: 29%;
-  bottom: 22%;
+  right: 28%;
+  bottom: 21%;
 }
 #t1 {
-  right: 17%;
-  bottom: 22%;
+  right: 16%;
+  bottom: 21%;
 }
 #t2 {
-  right: 5%;
-  bottom: 22%;
+  right: 4%;
+  bottom: 21%;
 }
+#i0 {
+  right: 26%;
+  bottom: 6%;
+}
+#i1 {
+  right: 14%;
+  bottom: 6%;
+}
+#i3 {
+  right: 1%;
+  bottom: 6%;
+}
+
 .vl1, .vl2 {
   position: absolute;
   border-left: 6px solid var(--accent-color);
