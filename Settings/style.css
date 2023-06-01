@@ -219,7 +219,16 @@ h1 {
 }
 .weather-vertical {
   font-size: 300%;
-  display: none;
+  position: absolute;
+
+  top: 55%;
+  right: 63%;
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+
 }
 
 .module-text {

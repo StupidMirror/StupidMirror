@@ -1,0 +1,184 @@
+:root {
+  --background: black;
+  --text-color: #f8f9fa;
+  --accent-color: #495057;
+
+  --font: sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  color: var(--text-color);
+  font-family: var(--font);
+}
+body {
+  background-color: var(--background);
+}
+
+#date-text {
+  position: absolute;
+  right: 2%;
+  bottom: 50%;
+  font-size: 4vw;
+}
+#time-text {
+  position: absolute;
+  right: 10%;
+  bottom: 26%;
+  font-size: 14vw;
+  font-weight: 600;
+}
+#sec-text {
+  position: absolute;
+  right: 2%;
+  bottom: 38%;
+  font-size: 7vw;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.module-motto {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 1%;
+  margin-top: -13%;
+  max-width: 50vw;
+}
+#motto-text {
+  position: absolute;
+  font-size: 3vw;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.module-event {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 2%;
+  top: 10%;
+  font-size: 3vw;
+  font-weight: 200;
+}
+#event-text {
+  position: absolute;
+  top: -25%;
+  font-weight: 600;
+  width: max-content;
+}
+events {
+  display: block;
+  max-width: max-content;
+}
+
+.module-news {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 1%;
+  margin-top: 25%;
+  max-width: 50vw;
+}
+#news-text {
+  font-size: 3vw;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+#newsTime-text {
+  font-size: 2vw;
+  font-weight: 100;
+  width: max-content;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.module-weather {
+  display: flex;
+}
+.weathers {
+  position: absolute;
+  font-size: 2vw;
+  font-weight: 200;
+}
+.times {
+  position: absolute;
+  font-size: 4vw;
+  font-weight: 600;
+}
+.icons {
+  position: absolute;
+  height: 17vh;
+}
+#w0 {
+  right: 32%;
+  bottom: 8%;
+}
+#w1 {
+  right: 19%;
+  bottom: 8%;
+}
+#w2 {
+  right: 7%;
+  bottom: 8%;
+}
+#t0 {
+  right: 28%;
+  bottom: 21%;
+}
+#t1 {
+  right: 16%;
+  bottom: 21%;
+}
+#t2 {
+  right: 4%;
+  bottom: 21%;
+}
+#i0 {
+  right: 26%;
+  bottom: 6%;
+}
+#i1 {
+  right: 14%;
+  bottom: 6%;
+}
+#i3 {
+  right: 1%;
+  bottom: 6%;
+}
+
+.vl1, .vl2 {
+  position: absolute;
+  border-left: 20px solid var(--accent-color);
+  border-radius: 200px;
+  height: 20%;
+}
+.vl1 {
+  right: 15%;
+  bottom: 8%;
+}
+.vl2 {
+  right: 27%;
+  bottom: 8%;
+}
+.hl1 {
+  position: absolute;
+  right: 2%;
+  bottom: 21%;
+  width: 40%;
+  height: .6%;
+  border-radius: 200px;
+  background-color: var(--accent-color);
+}

@@ -1,0 +1,232 @@
+:root {
+  --background: black;
+  --text-color: #f8f9fa;
+  --accent-color: #495057;
+
+  --font: sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  color: var(--text-color);
+  font-family: var(--font);
+}
+body {
+  background-color: var(--background);
+}
+
+#date-text {
+  position: absolute;
+  right: -18%;
+  bottom: 40%;
+  font-size: 4vw;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#time-text {
+  position: absolute;
+  right: -5%;
+  bottom: 35%;
+  font-size: 14vw;
+  font-weight: 600;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#sec-text {
+  position: absolute;
+  right: 6%;
+  bottom: 3.2%;
+  font-size: 7vw;
+  font-weight: 600;
+  color: var(--accent-color);
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+
+.module-motto {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: -15%;
+  margin-top: -8.5%;
+  max-width: 49vw;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#motto-text {
+  font-size: 3vw;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.module-event {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 56%;
+  top: 44%;
+  font-size: 3vw;
+  font-weight: 200;
+  text-align: right;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#event-text {
+  position: absolute;
+  top: -25%;
+  font-weight: 600;
+  width: max-content;
+}
+events {
+  display: block;
+  max-width: max-content;
+}
+
+.module-news {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: -15%;
+  margin-top: 24%;
+  max-width: 49vw;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#news-text {
+  font-size: 3vw;
+  font-weight: 600;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+#newsTime-text {
+  font-size: 2vw;
+  font-weight: 100;
+  width: max-content;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.module-weather {
+  display: flex;
+}
+.weathers {
+  position: absolute;
+  font-size: 2vw;
+  font-weight: 200;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+.times {
+  position: absolute;
+  font-size: 4vw;
+  font-weight: 600;
+}
+.icons {
+  position: absolute;
+  height: 17vh;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+#w0 {
+  right: 44.5%;
+  bottom: 74%;
+}
+#w1 {
+  right: 56.5%;
+  bottom: 74%;
+}
+#w2 {
+  right: 68.5%;
+  bottom: 74%;
+}
+#t0 {
+  right: 39%;
+  bottom: 84%;
+}
+#t1 {
+  right: 51%;
+  bottom: 84%;
+}
+#t2 {
+  right: 63%;
+  bottom: 84%;
+}
+#i0 {
+  right: 38%;
+  bottom: 67%;
+}
+#i1 {
+  right: 50%;
+  bottom: 67%;
+}
+#i3 {
+  right: 62%;
+  bottom: 67%;
+}
+
+.vl1, .vl2 {
+  position: absolute;
+  border-left: 20px solid var(--accent-color);
+  border-radius: 200px;
+  height: 20%;
+}
+.vl1 {
+  right: 62%;
+  bottom: 72%;
+}
+.vl2 {
+  right: 50%;
+  bottom: 72%;
+}
+.hl1 {
+  position: absolute;
+  right: 38%;
+  bottom: 84%;
+  width: 40%;
+  height: .6%;
+  border-radius: 200px;
+  background-color: var(--accent-color);
+}
