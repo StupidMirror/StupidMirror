@@ -21,7 +21,7 @@ body {
 #date-text {
   position: absolute;
   right: 2%;
-  bottom: 50%;
+  bottom: 52%;
   font-size: 4vw;
 }
 #time-text {
@@ -135,11 +135,11 @@ events {
   bottom: 8%;
 }
 #t0 {
-  right: 28%;
+  right: 29%;
   bottom: 21%;
 }
 #t1 {
-  right: 16%;
+  right: 15%;
   bottom: 21%;
 }
 #t2 {
