@@ -34,7 +34,7 @@ body {
 #sec-text {
   position: absolute;
   right: 2%;
-  bottom: 38%;
+  bottom: 25%;
   font-size: 7vw;
   font-weight: 600;
   color: var(--accent-color);
