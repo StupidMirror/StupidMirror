@@ -62,7 +62,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: -15%;
+  margin-left: -11%;
   margin-top: -8.5%;
   max-width: 49vw;
 
@@ -82,11 +82,12 @@ body {
 }
 
 .module-event {
+  width: 30%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  left: 56%;
-  top: 44%;
+  left: 52%;
+  top: 50%;
   font-size: 3vw;
   font-weight: 200;
   text-align: right;
@@ -112,7 +113,7 @@ events {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: -15%;
+  margin-left: -11%;
   margin-top: 24%;
   max-width: 49vw;
 
@@ -229,4 +230,17 @@ events {
   height: .6%;
   border-radius: 200px;
   background-color: var(--accent-color);
+}
+
+.sponsor {
+  height: 5vw;
+  position: absolute;
+  top: 17%;
+  left: -5%;
+
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
 }

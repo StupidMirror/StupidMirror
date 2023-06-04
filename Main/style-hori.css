@@ -21,7 +21,7 @@ body {
 #date-text {
   position: absolute;
   right: 2%;
-  bottom: 52%;
+  top: 40%;
   font-size: 4vw;
 }
 #time-text {
@@ -34,7 +34,7 @@ body {
 #sec-text {
   position: absolute;
   right: 2%;
-  bottom: 35%;
+  bottom: 38%;
   font-size: 7vw;
   font-weight: 600;
   color: var(--accent-color);
@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   position: relative;
   margin-left: 1%;
-  margin-top: -5%;
+  margin-top: -10%;
   max-width: 50vw;
 }
 #motto-text {
@@ -83,7 +83,7 @@ events {
   flex-direction: column;
   position: relative;
   margin-left: 1%;
-  margin-top: 25%;
+  margin-top: 27%;
   max-width: 50vw;
 }
 #news-text {
@@ -151,7 +151,7 @@ events {
   bottom: 6%;
 }
 #i1 {
-  right: 14%;
+  right: 14.3%;
   bottom: 6%;
 }
 #i3 {
@@ -181,4 +181,11 @@ events {
   height: .6%;
   border-radius: 200px;
   background-color: var(--accent-color);
+}
+
+.sponsor {
+  height: 5vw;
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
 }
