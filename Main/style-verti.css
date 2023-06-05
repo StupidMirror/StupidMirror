@@ -72,13 +72,16 @@ body {
   -o-transform: rotate(90deg);   /* Opera */
   transform: rotate(90deg);
 }
-#motto-text {
-  font-size: 3vw;
-  font-weight: 600;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
+.module-motto {
+  font-size: 3vw;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  position: fixed;
+  top: 65%;
+  left: 27%;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .module-event {
